@@ -28,7 +28,20 @@
          <!-- Phone -->
          <ng-container matColumnDef="phone">
             <th mat-header-cell *matHeaderCellDef> Telefono </th>
-            <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.phone}}</td>
+          </ng-container>
+
+          <!-- Actions -->
+         <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="accent" (click)="editButtonClicked()">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="accent" (click)="deleteButtonClicked()">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
           </ng-container>
     
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
